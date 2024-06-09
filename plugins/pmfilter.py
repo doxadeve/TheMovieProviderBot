@@ -2090,7 +2090,12 @@ async def auto_filter_pm(client, msg, spoll=False):
             settings = await get_settings(message.chat.id)
             if not files:
                 await m.delete()
-                await msg.reply_text("sorry go")
+                if settings["spell_check"]:
+                    return await advantage_spell_chok(client, msg)
+                else:
+                    # if NO_RESULTS_MSG:
+                    #     await client.send_message(chat_id=LOG_CHANNEL, text=(script.NORSLTS.format(reqstr.id, reqstr.mention, search)))
+                    return
         else:
             return
     else:
