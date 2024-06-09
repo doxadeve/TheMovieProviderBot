@@ -2278,6 +2278,9 @@ async def auto_filter_pm(client, msg, spoll=False):
             await asyncio.sleep(300)
             await fuk.delete()
             await message.delete()
+            
+async def advantage_spell_chok_pm(client, msg):
+    await msg.reply_text("$& jaake chrck ktojrltrjogt")
     
 async def auto_filter(client, msg, spoll=False):
     curr_time = datetime.now(pytz.timezone('Asia/Kolkata')).time()
